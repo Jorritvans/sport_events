@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ event.name }} - Details</title>
+    <link rel="stylesheet" href="{% static 'events/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ event.name }}</h1>
+    </header>
+    <div class="event-detail-container">
+        <img src="{{ event.image.url }}" alt="{{ event.name }}">
+        <div class="event-detail-content">
+            <p>{{ event.description }}</p>
+            <p><strong>Date:</strong> {{ event.date }}</p>
+            <p><strong>Location:</strong> {{ event.location }}</p>
+            <h2>Book Tickets</h2>
+            <form method="post" action="{% url 'book_event' event.id %}">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="number" name="number_of_tickets" placeholder="Number of Tickets" required>
+                <button type="submit" class="btn">Book Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
