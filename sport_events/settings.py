@@ -12,25 +12,21 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 import dj_database_url
-from pathlib import Path
-
-if os.path.isfile('env.py'):
-    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-a&od#h7(_^_n%n$&y$6w*941p2c=3=fbfnb@z#&)gtz$s&m-x5'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'gbuZ10rflY4zE9TE_lP4nw6bznAQEPkDPf8Bo-2ENIzgOI9iKQaWcsKvZBYE2N9ZExk')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io']
+ALLOWED_HOSTS = ['8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io', 'localhost']
 
 
 # Application definition
@@ -80,7 +76,7 @@ WSGI_APPLICATION = 'sport_events.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3"))
 }
 
 
@@ -121,6 +117,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# CSRF Trusted Origins
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
