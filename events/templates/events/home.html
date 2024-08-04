@@ -1,46 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports Events</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'events/css/styles.css' %}">
-</head>
-<body>
-    <div class="content-wrapper">
-        <header>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <h1>Upcoming Sports Events</h1>
-        </header>
+{% extends 'base.html' %}
 
-        <section class="events-section">
-            <div class="events-container">
-                {% for event in events %}
-                <div class="event-card">
-                    <img src="{{ event.image.url }}" alt="{{ event.name }}" class="event-image">
-                    <div class="event-card-content">
-                        <h2>{{ event.name }}</h2>
-                        <p class="event-description">{{ event.description }}</p>
-                        <p><strong>Date:</strong> {{ event.date }}</p>
-                        <p><strong>Location:</strong> {{ event.location }}</p>
-                        <a href="{% url 'event_detail' event.id %}" class="btn">View Details</a>
-                    </div>
-                </div>
-                {% endfor %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Welcome to Sports Events</h1>
+    <p>Join us for the most exciting sports events happening around you! Stay updated, participate, and enjoy.</p>
+</header>
+
+<section class="intro">
+    <h2>Why Choose Us?</h2>
+    <p>We bring together the best sports events in one place. From marathons to frisbee tournaments, find and join events that match your interests and skills.</p>
+    <ul>
+        <li>Wide range of events</li>
+        <li>Easy registration</li>
+        <li>Community of sports enthusiasts</li>
+    </ul>
+</section>
+
+<section class="events" id="events">
+    <h2>Upcoming Events</h2>
+    <div class="events-container">
+        {% for event in events %}
+        <div class="event-card">
+            <img src="{{ event.image.url }}" alt="{{ event.name }}">
+            <div class="event-card-content">
+                <h3>{{ event.name }}</h3>
+                <p>{{ event.description }}</p>
+                <p><strong>Date:</strong> {{ event.date }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+                <a href="{% url 'event_detail' event.id %}" class="btn">View Details</a>
             </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2024 Sports Events. All rights reserved.</p>
-        </footer>
+        </div>
+        {% endfor %}
     </div>
-</body>
-</html>
+</section>
+{% endblock %}

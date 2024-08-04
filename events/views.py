@@ -32,3 +32,13 @@ def book_event(request, event_id):
         )
         # Redirect to the event details page
         return redirect('event_detail', event_id=event_id)
+
+# Additional views for the other pages
+
+# About page view
+def about(request):
+    return render(request, 'events/about.html')
+
+# Contact page view
+def contact(request):
+    return render(request, 'events/contact.html')

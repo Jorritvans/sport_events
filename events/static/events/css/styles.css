@@ -1,118 +1,181 @@
-body, html {
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
 }
 
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+h1, h2, h3 {
+    text-align: center;
+    color: #0056b3;
 }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px 0;
+p {
+    text-align: center;
+    line-height: 1.6;
+    margin: 0 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
     text-align: center;
 }
 
-header nav {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
+ul li {
+    display: inline;
+    margin: 0 10px;
 }
 
-header .nav-links {
-    list-style-type: none;
+/* Navigation Bar */
+nav {
+    background-color: #0056b3;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-header .nav-links li {
-    display: inline;
+.nav-links li {
     margin: 0 15px;
 }
 
-header .nav-links a {
+.nav-links a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 16px;
 }
 
-header h1 {
-    margin: 10px 0;
-    font-size: 2.5em;
+.nav-links a:hover {
+    text-decoration: underline;
 }
 
-.events-section {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
-}
-
-.events-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+/* Content Wrapper */
+.content-wrapper {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 80px auto 0; /* Adjusted for fixed navbar */
+    padding: 20px;
+    background-color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Home Page */
+.intro {
+    margin: 20px 0;
+}
+
+.events {
+    margin: 20px 0;
+}
+
+/* Event Cards */
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .event-card {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: #fff;
     border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    max-width: 300px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s;
 }
 
 .event-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
 }
 
-.event-image {
+.event-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
 }
 
 .event-card-content {
-    padding: 15px;
+    padding: 20px;
+    text-align: center;
 }
 
-.event-card-content h2 {
-    margin: 0 0 10px;
-    font-size: 1.5em;
-    color: #333;
-}
-
-.event-description {
-    margin: 10px 0;
-    color: #666;
+.event-card-content h3 {
+    margin-top: 0;
 }
 
 .btn {
     display: inline-block;
-    padding: 10px 15px;
-    background-color: #4CAF50;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #0056b3;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
 }
 
 .btn:hover {
-    background-color: #45a049;
+    background-color: #004494;
 }
 
-footer {
-    background-color: #4CAF50;
+/* About Page */
+.about-page {
+    padding: 20px;
+}
+
+/* Contact Page */
+.contact-page {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #0056b3;
     color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: auto;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #004494;
 }
