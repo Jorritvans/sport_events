@@ -1,38 +1,42 @@
 {% extends 'base.html' %}
-{% block title %}Home{% endblock %}
+
+{% block title %}Home - Sports Events{% endblock %}
+
 {% block content %}
 <section class="hero">
-    <h1>Welcome to Sports Events</h1>
-    <p>Your gateway to the most exciting sports events. Join us and experience the thrill!</p>
+    <h1>Welcome to Sportify</h1>
+    <p>Discover and join exciting sports events in your area!</p>
     <a href="#events" class="btn">Explore Events</a>
 </section>
+
 <section class="features">
     <div class="feature">
+        <i class="fas fa-futbol"></i>
+        <h2>Wide Range of Sports</h2>
+        <p>From football to tennis, we have events for all sports enthusiasts.</p>
+    </div>
+    <div class="feature">
         <i class="fas fa-calendar-alt"></i>
-        <h2>Wide Range of Events</h2>
-        <p>From marathons to football matches, we have it all.</p>
+        <h2>Easy Scheduling</h2>
+        <p>Find events that fit your schedule with our easy-to-use calendar.</p>
     </div>
     <div class="feature">
         <i class="fas fa-users"></i>
-        <h2>Community of Enthusiasts</h2>
-        <p>Connect with fellow sports lovers and make new friends.</p>
-    </div>
-    <div class="feature">
-        <i class="fas fa-bolt"></i>
-        <h2>Exciting Atmosphere</h2>
-        <p>Feel the adrenaline rush with every event.</p>
+        <h2>Community Driven</h2>
+        <p>Connect with other sports enthusiasts and make new friends.</p>
     </div>
 </section>
+
 <section class="events" id="events">
     <h2>Upcoming Events</h2>
     <div class="events-container">
         {% for event in events %}
         <div class="event-card">
-            <img src="{{ event.image.url }}" alt="{{ event.title }}">
+            <img src="{{ event.image.url }}" alt="{{ event.name }}">
             <div class="event-card-content">
-                <h3>{{ event.title }}</h3>
+                <h3>{{ event.name }}</h3>
                 <p>{{ event.description }}</p>
-                <p><strong>Date:</strong> {{ event.date_time }}</p>
+                <p><strong>Date:</strong> {{ event.date }}</p>
                 <p><strong>Location:</strong> {{ event.location }}</p>
                 <a href="{% url 'event_detail' event.id %}" class="btn">View Details</a>
             </div>

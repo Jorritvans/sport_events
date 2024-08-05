@@ -1,38 +1,22 @@
 from django.db import models
 
-# Model representing an event
 class Event(models.Model):
-    # Name of the event
-    name = models.CharField(max_length=100)
-
-    # Detailed description of the event
+    title = models.CharField(max_length=200)
     description = models.TextField()
-
-    # Date and time when the event will occur
-    date = models.DateTimeField()
-
-    # Location where the event will be held
-    location = models.CharField(max_length=100)
-
-    # Image associated with the event
-    image = models.ImageField(upload_to='event_images/')
+    location = models.CharField(max_length=200)
+    date = models.DateField()
+    image = models.ImageField(upload_to='event_images/', null=True, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
-        return self.name
+        return self.title
 
-# Model representing a booking for an event
 class Booking(models.Model):
-    # Event associated with the booking
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
-
-    # Name of the person making the booking
     name = models.CharField(max_length=100)
-
-    # Email of the person making the booking
     email = models.EmailField()
-
-    # Number of tickets booked
     number_of_tickets = models.PositiveIntegerField()
+    date_booked = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.name} - {self.event.name}"
+        return f"{self.name} - {self.event.title}"
