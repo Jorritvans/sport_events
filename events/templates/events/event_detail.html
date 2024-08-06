@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ event.title }}{% endblock %}
+{% block title %}Event Details{% endblock %}
 
 {% block content %}
-<div class="event-detail">
-    <h1>{{ event.title }}</h1>
-    <img src="{{ event.image.url }}" alt="{{ event.title }}">
-    <p><strong>Date:</strong> {{ event.date }}</p>
-    <p><strong>Location:</strong> {{ event.location }}</p>
-    <p>{{ event.description }}</p>
-    <a href="{% url 'book_event' event.id %}" class="btn">Book Now</a>
+<div class="event-detail-container">
+    <div class="event-detail-content">
+        <img src="{{ event.image.url }}" alt="{{ event.title }}">
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description }}</p>
+        <p><strong>Date:</strong> {{ event.date }}</p>
+        <p><strong>Location:</strong> {{ event.location }}</p>
+        <a href="{% url 'book_event' event.id %}" class="btn-book-now">Book Now</a>
+    </div>
 </div>
 {% endblock %}
