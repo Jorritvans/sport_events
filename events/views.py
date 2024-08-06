@@ -1,6 +1,8 @@
+# Import necessary modules and models
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Event, Booking
 
+# Define your views
 def event_list(request):
     events = Event.objects.all()
     return render(request, 'events/home.html', {'events': events})
