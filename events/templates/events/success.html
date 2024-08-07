@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Booking Successful{% endblock %}
+
+{% block content %}
+<div class="success-message">
+    <h2>Thank you for your booking!</h2>
+    <p>Your booking has been successfully recorded. We look forward to seeing you at the event.</p>
+    <a href="{% url 'home' %}" class="btn">Go to Home</a>
+</div>
+{% endblock %}

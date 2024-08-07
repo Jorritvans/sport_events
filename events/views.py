@@ -1,8 +1,6 @@
-# Import necessary modules and models
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Event, Booking
 
-# Define your views
 def event_list(request):
     events = Event.objects.all()
     return render(request, 'events/home.html', {'events': events})
@@ -25,7 +23,7 @@ def book_event(request, event_id):
                 email=email,
                 number_of_tickets=number_of_tickets
             )
-            return redirect('event_detail', event_id=event_id)
+            return render(request, 'events/success.html')
     return render(request, 'events/book_event.html', {'event': event})
 
 def about(request):

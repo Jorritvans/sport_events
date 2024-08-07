@@ -223,7 +223,7 @@ body {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-}
+    }
 
 .event-card .btn:hover {
     background-color: #0075ff;
@@ -476,4 +476,52 @@ form button[type="submit"]:hover {
 .btn-book-now:hover {
     background-color: #0075ff;
     color: #ffffff;
+}
+
+.success-message {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.success-message h2 {
+    font-size: 2.5em;
+    color: #00c8ff;
+    margin-bottom: 20px;
+}
+
+.success-message p {
+    font-size: 1.2em;
+    color: #c0c0c0;
+    margin-bottom: 20px;
+}
+
+.success-message .btn {
+    background-color: #00c8ff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.success-message .btn:hover {
+    background-color: #0075ff;
+    color: #ffffff;
+}
+
+/* Styles specific to the home screen event cards */
+.home-screen .event-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.home-screen .event-card-content {
+    flex-grow: 1;
+}
+
+.home-screen .btn {
+    align-self: flex-end;
 }
