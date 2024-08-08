@@ -21,3 +21,12 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.user} booked {self.event.title}"
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)  # Add this line
+
+    def __str__(self):
+        return self.name

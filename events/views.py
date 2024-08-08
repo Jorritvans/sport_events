@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Event, Booking
+from .forms import ContactForm
 
 def event_list(request):
     events = Event.objects.all()
@@ -25,6 +26,16 @@ def book_event(request, event_id):
             )
             return render(request, 'events/success.html')
     return render(request, 'events/book_event.html', {'event': event})
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'events/success.html')  # Create a success page if you don't have one
+    else:
+        form = ContactForm()
+    return render(request, 'events/contact.html', {'form': form})
 
 def about(request):
     return render(request, 'events/about.html')
