@@ -47,6 +47,14 @@ body {
     color: #00c8ff;
 }
 
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    font-size: 2em;
+    color: #ffffff;
+    cursor: pointer;
+}
+
 /* General styling for the About Us page */
 .about-page {
     padding: 50px 40px;
@@ -535,4 +543,73 @@ form button[type="submit"]:hover {
 
 .home-screen .btn {
     align-self: flex-end;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .features {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .feature {
+        flex: 1 1 100%;
+        padding: 10px;
+    }
+
+    .events-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-card {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+
+    .event-card-content {
+        padding: 10px;
+    }
+
+    .upcoming { 
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100vw;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #272727;
+        text-align: center;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    ul {
+        padding: 0%;
+    }
 }

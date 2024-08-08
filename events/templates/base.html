@@ -13,7 +13,10 @@
         <div class="logo">
             <a href="{% url 'home' %}">Sportify</a>
         </div>
-        <ul class="nav-links">
+        <div class="hamburger" onclick="toggleNav()">
+            &#9776;
+        </div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
@@ -33,3 +36,13 @@
     </footer>
 </body>
 </html>
+<script>
+    function toggleNav() {
+        var navLinks = document.getElementById("navLinks");
+        if (navLinks.classList.contains("active")) {
+            navLinks.classList.remove("active");
+        } else {
+            navLinks.classList.add("active");
+        }
+    }
+    </script>

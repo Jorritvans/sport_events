@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Event, Booking
-from .models import Contact
+from .models import Event, Booking, ContactSubmission
 
 class EventAdmin(admin.ModelAdmin):
     list_display = ('title', 'date', 'location', 'price')
@@ -11,9 +10,9 @@ class BookingAdmin(admin.ModelAdmin):
     search_fields = ('event__title', 'user__username')
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'message', 'created_at')
+    list_display = ('name', 'email', 'message', 'submitted_at')
     search_fields = ('name', 'email', 'message')
 
 admin.site.register(Event, EventAdmin)
 admin.site.register(Booking, BookingAdmin)
-admin.site.register(Contact, ContactAdmin)
+admin.site.register(ContactSubmission)
