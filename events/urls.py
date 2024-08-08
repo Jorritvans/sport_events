@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import path
 from events import views
-from .views import contact_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -9,6 +8,4 @@ urlpatterns = [
     path('event/<int:event_id>/', views.event_detail, name='event_detail'),
     path('event/<int:event_id>/book/', views.book_event, name='book_event'),
     path('about/', views.about, name='about'),
-    path('contact/', views.contact, name='contact'),
-    path('contact/success/', views.contact_success, name='contact_success'),
 ]

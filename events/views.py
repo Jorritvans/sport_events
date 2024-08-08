@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Event, Booking, ContactSubmission
-from .forms import ContactForm
+from .models import Event, Booking
 
 def event_list(request):
     events = Event.objects.all()
@@ -32,24 +31,6 @@ def booking_success(request):
 
 def about(request):
     return render(request, 'events/about.html')
-
-def contact(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
-        
-        if name and email and message:
-            ContactMessage.objects.create(
-                name=name,
-                email=email,
-                message=message
-            )
-            return redirect('contact_success')
-    return render(request, 'events/contact.html')
-
-def contact_success(request):
-    return render(request, 'events/contact_success.html')
 
 def contact(request):
     return render(request, 'events/contact.html')
