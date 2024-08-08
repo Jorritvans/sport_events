@@ -22,9 +22,6 @@ class Booking(models.Model):
     def __str__(self):
         return f"{self.user} booked {self.event.title}"
 
-# events/models.py
-from django.db import models
-
 class ContactSubmission(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()

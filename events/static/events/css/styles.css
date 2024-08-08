@@ -584,6 +584,19 @@ form button[type="submit"]:hover {
     }
 }
 
+.contact-details {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border: #ccc 1px solid;
+}
+.contact-details h2 {
+    margin-top: 0;
+}
+.contact-details p {
+    line-height: 1.6;
+}
+
 @media (max-width: 768px) {
     .navbar .nav-links {
         display: none;
@@ -613,3 +626,4 @@ form button[type="submit"]:hover {
         padding: 0%;
     }
 }
+
