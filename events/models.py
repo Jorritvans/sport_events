@@ -17,7 +17,7 @@ class Event(models.Model):
 
 class Booking(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
-    user = models.CharField(max_length=150, blank=True, null=True)
+    user = models.CharField(max_length=150, blank=True, null=False)
     email = models.EmailField()
     date_booked = models.DateTimeField(default=timezone.now)
     number_of_tickets = models.IntegerField(default=1)
