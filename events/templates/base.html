@@ -20,6 +20,13 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'user_bookings' %}">My Bookings</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
         </ul>
     </nav>
     <div class="content-wrapper">
@@ -34,15 +41,15 @@
         </ul>
         <p>&copy; 2024 Sportify. All rights reserved.</p>
     </footer>
+    <script>
+        function toggleNav() {
+            var navLinks = document.getElementById("navLinks");
+            if (navLinks.classList.contains("active")) {
+                navLinks.classList.remove("active");
+            } else {
+                navLinks.classList.add("active");
+            }
+        }
+    </script>
 </body>
 </html>
-<script>
-    function toggleNav() {
-        var navLinks = document.getElementById("navLinks");
-        if (navLinks.classList.contains("active")) {
-            navLinks.classList.remove("active");
-        } else {
-            navLinks.classList.add("active");
-        }
-    }
-    </script>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Booking{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Edit Booking</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="number_of_tickets">Number of Tickets:</label>
+        <input type="number" name="number_of_tickets" value="{{ booking.number_of_tickets }}" required>
+        <button type="submit" class="btn">Update</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}My Bookings{% endblock %}
+
+{% block content %}
+<div class="booking-list-container">
+    <h2>Your Bookings</h2>
+    <div class="booking-list">
+        {% for booking in bookings %}
+            <div class="booking-card">
+                <h3>{{ booking.event.title }}</h3>
+                <p><strong>Date:</strong> {{ booking.event.date }}</p>
+                <p><strong>Tickets:</strong> {{ booking.number_of_tickets }}</p>
+                <a href="{% url 'edit_booking' booking.id %}" class="btn">Edit</a>
+                <a href="{% url 'cancel_booking' booking.id %}" class="btn">Cancel</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

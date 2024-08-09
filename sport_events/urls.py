@@ -14,19 +14,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# sport_events/urls.py
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from events import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # URL pattern for the admin interface
-    path('', views.event_list, name='home'),  # Home page displaying the list of events
-    path('event/<int:event_id>/', views.event_detail, name='event_detail'),  # Event detail view
-    path('event/<int:event_id>/book/', views.book_event, name='book_event'),  # Booking view for an event
-    path('about/', views.about, name='about'),  # About page
-    path('contact/', views.contact, name='contact'),  # Contact page
+    path('admin/', admin.site.urls),
+    path('', include('events.urls')),
 ]
 
 # Serve media files during development
