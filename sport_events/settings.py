@@ -12,12 +12,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'fallback-secret-key')
+SECRET_KEY = os.getenv(
+    'DJANGO_SECRET_KEY',
+    'fallback-secret-key'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io', 'localhost']
+ALLOWED_HOSTS = [
+    '8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io',
+    'localhost'
+]
 
 # Application definition
 
@@ -63,7 +69,9 @@ WSGI_APPLICATION = 'sport_events.wsgi.application'
 
 # Database configuration using dj_database_url for parsing DATABASE_URL
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3"))
+    'default': dj_database_url.parse(
+        os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
+    )
 }
 
 # Password validation
@@ -71,16 +79,28 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'NumericPasswordValidator'
+        ),
     },
 ]
 

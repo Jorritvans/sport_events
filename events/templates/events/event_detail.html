@@ -17,6 +17,12 @@
             {% for comment in comments %}
                 <p><strong>{{ comment.user.username }}</strong> ({{ comment.created_at }}):</p>
                 <p>{{ comment.text }}</p>
+                {% if comment.user == user %}
+                    <p>
+                        <a href="{% url 'edit_comment' comment.id %}" class="btn-link">Edit</a>
+                        <a href="{% url 'delete_comment' comment.id %}" class="btn-link">Delete</a>
+                    </p>
+                {% endif %}
             {% endfor %}
         </div>
 
