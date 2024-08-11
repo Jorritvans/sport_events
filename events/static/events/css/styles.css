@@ -545,6 +545,32 @@ form button[type="submit"]:hover {
     align-self: flex-end;
 }
 
+form ul li {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+form ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+
+.message-error {
+    color: darkred;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.message-error:before,
+.message-error:after {
+    content: '**';
+    margin: 0 5px;
+}
+
+
 /* Media Queries for Mobile Devices */
 @media (max-width: 600px) {
     .hero h1 {

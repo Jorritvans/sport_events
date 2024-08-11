@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib import messages
 from .models import Event, Booking, Comment
 from .forms import RegisterForm, BookingForm, CommentForm
 
@@ -72,7 +73,10 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
+            messages.success(request, 'Your account has been created successfully!')
             return redirect('home')
+        else:
+            messages.error(request, 'Please correct the errors below.')
     else:
         form = RegisterForm()
     return render(request, 'events/register.html', {'form': form})
@@ -100,3 +104,4 @@ def about(request):
 
 def contact(request):
     return render(request, 'events/contact.html')
+
