@@ -1,10 +1,9 @@
-# events/forms.py
-
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import Booking, Comment
 from django.contrib.auth.models import User
 
+# Form for user registration with custom fields and validation
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
@@ -32,11 +31,13 @@ class RegisterForm(UserCreationForm):
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError("** Passwords do not match **")
 
+# Form for booking an event
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = ['user', 'email', 'number_of_tickets']
 
+# Form for adding a comment to an event
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment

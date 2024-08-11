@@ -1,3 +1,4 @@
+/* Global styling for body, including font, background color, text color, and layout */
 body {
     font-family: 'Roboto', sans-serif;
     background: #1e1e1e;
@@ -10,6 +11,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Navbar styling */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -20,6 +22,7 @@ body {
     box-sizing: border-box;
 }
 
+/* Logo styling in the navbar */
 .navbar .logo a {
     color: #00c8ff;
     font-size: 2em;
@@ -27,27 +30,31 @@ body {
     font-weight: bold;
 }
 
+/* Navigation links styling in the navbar */
 .navbar .nav-links {
     list-style: none;
     display: flex;
     margin: 0;
 }
 
+/* Individual navigation link styling */
 .navbar .nav-links li {
     margin: 0 20px;
 }
 
+/* Navigation link text styling */
 .navbar .nav-links a {
     color: #ffffff;
     text-decoration: none;
     font-size: 1.3em;
 }
 
+/* Hover effect for navigation links */
 .navbar .nav-links a:hover {
     color: #00c8ff;
 }
 
-/* Hamburger Menu Styles */
+/* Hamburger menu styling for mobile */
 .hamburger {
     display: none;
     font-size: 2em;
@@ -67,7 +74,7 @@ body {
     color: #e0e0e0;
 }
 
-/* Heading styles */
+/* Heading styles for the About Us page */
 .about-page h1 {
     font-size: 2.5em;
     color: #00c8ff;
@@ -81,7 +88,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Paragraph styling */
+/* Paragraph styling in the About Us page */
 .about-page p {
     font-size: 1.2em;
     line-height: 1.6;
@@ -89,7 +96,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* List styling */
+/* List styling in the About Us page */
 .about-page ul {
     list-style: none;
     padding: 0;
@@ -108,14 +115,14 @@ body {
     color: #00c8ff;
 }
 
-
+/* Content wrapper styling for flexbox layout */
 .content-wrapper {
-
     flex: 1;
     width: 100%;
     box-sizing: border-box;
 }
 
+/* Hero section styling */
 .hero {
     background: linear-gradient(to right, #00c8ff, #0075ff);
     color: #ffffff;
@@ -135,6 +142,7 @@ body {
     margin-bottom: 40px;
 }
 
+/* Button styling for hero section */
 .hero .btn {
     background-color: #ffffff;
     color: #0075ff;
@@ -149,6 +157,7 @@ body {
     color: #ffffff;
 }
 
+/* Features section styling */
 .features {
     display: flex;
     justify-content: space-around;
@@ -164,12 +173,14 @@ body {
     margin: 0 20px;
 }
 
+/* Icon styling in features section */
 .features .feature i {
     font-size: 3em;
     color: #00c8ff;
     margin-bottom: 20px;
 }
 
+/* Heading and paragraph styling in features section */
 .features .feature h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -180,12 +191,14 @@ body {
     color: #c0c0c0;
 }
 
+/* Events container styling */
 .events-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+/* Event card styling */
 .event-card {
     display: flex;
     flex-direction: column;
@@ -199,10 +212,12 @@ body {
     transition: transform 0.3s;
 }
 
+/* Event card hover effect */
 .event-card:hover {
     transform: scale(1.05);
 }
 
+/* Event card image styling */
 .event-card img {
     width: 100%;
     height: 200px;
@@ -210,6 +225,7 @@ body {
     border-radius: 10px;
 }
 
+/* Event card content styling */
 .event-card-content {
     text-align: center;
     display: flex;
@@ -223,12 +239,14 @@ body {
     margin-bottom: 10px;
 }
 
+/* Payment message styling in event card */
 .event-card-content .payment-message {
     color: #c0c0c0;
     font-size: 0.9em;
     margin-top: auto;
 }
 
+/* Button styling in event card */
 .event-card .btn {
     background-color: #00c8ff;
     color: #ffffff;
@@ -248,6 +266,7 @@ body {
     background-color: #0075ff;
 }
 
+/* Footer content styling */
 .footer-content {
     text-align: center;
     padding: 20px;
@@ -261,6 +280,7 @@ body {
     margin: 10px 0;
 }
 
+/* Social media icons styling in footer */
 .footer-content .socials {
     list-style: none;
     display: flex;
@@ -282,10 +302,12 @@ body {
     color: #00c8ff;
 }
 
+/* Section styling for events */
 .section.events {
     margin-bottom: 60px;
 }
 
+/* See more button styling */
 .btn-see-more {
     display: inline-block;
     margin: 20px auto;
@@ -302,6 +324,7 @@ body {
     color: #ffffff;
 }
 
+/* Upcoming events heading styling */
 .upcoming {
     width: 33.33%;
     text-align: center;
@@ -310,7 +333,7 @@ body {
     font-size: 5em;
 }
 
-/* General styling for the Contact Us page */
+/* Contact section general styling */
 .contact-section {
     padding: 50px 40px;
     max-width: 800px;
@@ -322,14 +345,14 @@ body {
     color: #e0e0e0;
 }
 
-/* Heading styles */
+/* Contact section heading styling */
 .contact-section h1 {
     font-size: 2.5em;
     color: #00c8ff;
     margin-bottom: 20px;
 }
 
-/* Paragraph styling */
+/* Paragraph styling in the contact section */
 .contact-section p {
     font-size: 1.2em;
     line-height: 1.6;
@@ -337,7 +360,7 @@ body {
     margin-bottom: 30px;
 }
 
-/* Form styling */
+/* Form styling in the contact section */
 .contact-section form {
     display: flex;
     flex-direction: column;
@@ -351,6 +374,7 @@ body {
     align-self: flex-start;
 }
 
+/* Input and textarea styling in the contact section */
 .contact-section input,
 .contact-section textarea {
     width: 100%;
@@ -363,13 +387,14 @@ body {
     color: #e0e0e0;
 }
 
+/* Input and textarea focus styling */
 .contact-section input:focus,
 .contact-section textarea:focus {
     outline: none;
     border-color: #00c8ff;
 }
 
-/* Button styling */
+/* Button styling in the contact section */
 .contact-section .btn {
     background-color: #00c8ff;
     color: #ffffff;
@@ -387,22 +412,24 @@ body {
     background-color: #0075ff;
 }
 
-/* Event Detail Page */
+/* Event detail page general styling */
 .event-detail-container,
 .form-container {
     max-width: 800px;
-    margin: 0 auto; /* Centering the container */
+    margin: 0 auto;
     padding: 40px 20px;
 }
 
+/* Event detail content styling */
 .event-detail-content {
-    text-align: center; /* Centering text content */
+    text-align: center;
     padding: 20px;
     background-color: #272727;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Image styling in the event detail page */
 .event-detail-content img {
     width: 100%;
     height: auto;
@@ -411,13 +438,14 @@ body {
     border-radius: 10px;
 }
 
+/* Heading and paragraph styling in the event detail page */
 .event-detail-content h3,
 .event-detail-content p {
     color: #e0e0e0;
     margin-bottom: 10px;
 }
 
-/* Form Styles */
+/* Form general styling */
 form {
     max-width: 500px;
     margin: 0 auto;
@@ -437,6 +465,7 @@ form label {
     color: #e0e0e0;
 }
 
+/* Input, email, and textarea styling in the form */
 form input[type="text"],
 form input[type="email"],
 form textarea {
@@ -449,10 +478,12 @@ form textarea {
     color: #e0e0e0;
 }
 
+/* Textarea resize behavior */
 form textarea {
     resize: vertical;
 }
 
+/* Submit button styling in the form */
 form button[type="submit"] {
     display: inline-block;
     background-color: #00c8ff;
@@ -472,11 +503,12 @@ form button[type="submit"]:hover {
     color: #ffffff;
 }
 
+/* Form container styling */
 .form-container {
     text-align: center;
-}  
+}
 
-/* Book Now Button */
+/* Styling for the "Book Now" button */
 .btn-book-now {
     display: inline-block;
     background-color: #00c8ff;
@@ -497,6 +529,7 @@ form button[type="submit"]:hover {
     color: #ffffff;
 }
 
+/* Success message styling */
 .success-message {
     text-align: center;
     padding: 50px 20px;
@@ -514,6 +547,7 @@ form button[type="submit"]:hover {
     margin-bottom: 20px;
 }
 
+/* Button styling in success message */
 .success-message .btn {
     background-color: #00c8ff;
     color: #ffffff;
@@ -529,7 +563,7 @@ form button[type="submit"]:hover {
     color: #ffffff;
 }
 
-/* Styles specific to the home screen event cards */
+/* Styling specific to event cards on the home screen */
 .home-screen .event-card {
     display: flex;
     flex-direction: column;
@@ -541,10 +575,12 @@ form button[type="submit"]:hover {
     flex-grow: 1;
 }
 
+/* Styling for the "edit" and "cancel" buttons in the user bookings section */
 .home-screen .btn {
     align-self: flex-end;
 }
 
+/* Remove list bullets from form error messages */
 form ul li {
     list-style-type: none;
     padding-left: 0;
@@ -557,7 +593,7 @@ form ul {
     margin-left: 0;
 }
 
-
+/* Error message styling */
 .message-error {
     color: #E60026;
     font-weight: bold;
@@ -570,7 +606,7 @@ form ul {
     margin: 0 5px;
 }
 
-/* General Button Styles */
+/* General button styling */
 .btn,
 .btn-link {
     background-color: #00c8ff;
@@ -592,6 +628,7 @@ form ul {
     color: #ffffff;
 }
 
+/* Login link styling for "Log in to comment" */
 .login-link {
     color: #00c8ff; /* The same blue as your buttons */
     font-weight: bold; /* Optional: Make it bold to stand out */
@@ -602,7 +639,6 @@ form ul {
     color: #0075ff; /* Change to the hover color of your buttons */
     text-decoration: underline; /* Optional: Add underline on hover */
 }
-
 
 /* Media Queries for Mobile Devices */
 @media (max-width: 600px) {
@@ -643,19 +679,23 @@ form ul {
     }
 }
 
+/* Contact details styling for additional contact info */
 .contact-details {
     background: #fff;
     padding: 20px;
     margin-top: 20px;
     border: #ccc 1px solid;
 }
+
 .contact-details h2 {
     margin-top: 0;
 }
+
 .contact-details p {
     line-height: 1.6;
 }
 
+/* Media Queries for devices with max width 768px */
 @media (max-width: 768px) {
     .navbar .nav-links {
         display: none;
@@ -681,8 +721,8 @@ form ul {
     .hamburger {
         display: block;
     }
+
     ul {
         padding: 0%;
     }
 }
-

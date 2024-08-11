@@ -61,9 +61,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sport_events.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+# Database configuration using dj_database_url for parsing DATABASE_URL
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3"))
 }
@@ -118,4 +116,5 @@ CSRF_TRUSTED_ORIGINS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# URL to redirect users to login page if login is required
 LOGIN_URL = 'login_required'
