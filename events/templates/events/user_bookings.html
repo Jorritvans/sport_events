@@ -3,18 +3,25 @@
 {% block title %}My Bookings{% endblock %}
 
 {% block content %}
-<div class="booking-list-container">
+<div class="booking-list-container" style="text-align: center;">
     <h2>Your Bookings</h2>
-    <div class="booking-list">
+    <div class="booking-list" style="display: inline-block; max-width: 600px; margin: 0 auto;">
         {% for booking in bookings %}
-            <div class="booking-card">
+            <div class="booking-card" style="background-color: #272727; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
                 <h3>{{ booking.event.title }}</h3>
                 <p><strong>Date:</strong> {{ booking.event.date }}</p>
                 <p><strong>Tickets:</strong> {{ booking.number_of_tickets }}</p>
-                <a href="{% url 'edit_booking' booking.id %}" class="btn">Edit</a>
-                <a href="{% url 'cancel_booking' booking.id %}" class="btn">Cancel</a>
+                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                    <a href="{% url 'edit_booking' booking.id %}" class="btn-link">Edit</a>
+                    <a href="{% url 'cancel_booking' booking.id %}" class="btn-link">Cancel</a>
+                </div>
             </div>
         {% endfor %}
+    </div>
+
+    <!-- Go to Home Button -->
+    <div style="margin-top: 20px;">
+        <a href="{% url 'home' %}" class="btn-link">Go to Home</a>
     </div>
 </div>
 {% endblock %}
