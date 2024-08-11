@@ -559,7 +559,7 @@ form ul {
 
 
 .message-error {
-    color: darkred;
+    color: #E60026;
     font-weight: bold;
     display: inline-block;
 }
@@ -590,6 +590,17 @@ form ul {
 .btn-link:hover {
     background-color: #0075ff;
     color: #ffffff;
+}
+
+.login-link {
+    color: #00c8ff; /* The same blue as your buttons */
+    font-weight: bold; /* Optional: Make it bold to stand out */
+    text-decoration: none; /* Remove underline */
+}
+
+.login-link:hover {
+    color: #0075ff; /* Change to the hover color of your buttons */
+    text-decoration: underline; /* Optional: Add underline on hover */
 }
 
 

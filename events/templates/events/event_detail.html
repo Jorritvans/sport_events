@@ -11,7 +11,7 @@
         <p><strong>Date:</strong> {{ event.date }}</p>
         <p><strong>Location:</strong> {{ event.location }}</p>
         <a href="{% url 'book_event' event.id %}" class="btn-book-now">Book Now</a>
-
+        
         <h3>Comments</h3>
         <div class="comments">
             {% for comment in comments %}
@@ -27,7 +27,7 @@
                 <button type="submit" class="btn">Add Comment</button>
             </form>
         {% else %}
-            <p><a href="{% url 'login' %}">Log in</a> to comment.</p>
+            <p><a href="{% url 'login' %}" class="login-link">Log in</a> to comment</p>
         {% endif %}
     </div>
 </div>
