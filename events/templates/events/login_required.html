@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Login Required{% endblock %}
+
+{% block content %}
+<div class="form-container" style="text-align: center; max-width: 500px; margin: 0 auto;">
+    <h2>You Need to Log In</h2>
+    <p>You must be logged in to book an event. Please log in or register to continue.</p>
+    <a href="{% url 'login' %}" class="btn">Log In</a>
+    <p style="margin-top: 10px;">Don't have an account?</p>
+    <a href="{% url 'register' %}" class="btn">Register</a>
+</div>
+{% endblock %}

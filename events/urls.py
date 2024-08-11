@@ -13,4 +13,5 @@ urlpatterns = [
     path('bookings/', views.user_bookings, name='user_bookings'),
     path('bookings/edit/<int:booking_id>/', views.edit_booking, name='edit_booking'),
     path('bookings/cancel/<int:booking_id>/', views.cancel_booking, name='cancel_booking'),
+    path('login-required/', views.login_required_view, name='login_required'),
 ]

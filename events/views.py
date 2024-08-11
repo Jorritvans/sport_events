@@ -45,6 +45,9 @@ def book_event(request, event_id):
             return render(request, 'events/success.html')
     return render(request, 'events/book_event.html', {'event': event})
 
+def login_required_view(request):
+    return render(request, 'events/login_required.html')
+
 @login_required
 def user_bookings(request):
     bookings = Booking.objects.filter(user=request.user.username)
