@@ -1,131 +1,118 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Sportify
+Sportify is a dynamic platform where users can discover, participate in, and engage with various sports events. This web application allows users to register, book events, and interact with other sports enthusiasts through comments.
 
-Welcome Jorrit Vanstraelen,
+### Portfolio Project - Django Web Application
+The purpose of this project was to build an interactive web application using Django that allows users to explore and engage with sports events in their area.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Link to app
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+[Link to Sportify](https://your-deployment-link.com)
 
-## Gitpod Reminders
+## How to Use
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+In Sportify, users can browse through a list of available sports events, view details about each event, book tickets, and leave comments. To access these features, users need to register an account and log in.
 
-`python3 -m http.server`
+- **Register:** Create a new user account to start booking events and leave comments.
+  
+- **Login:** Access your account to view and manage your bookings and interact with events.
+  
+- **Browse Events:** Explore the homepage to find upcoming sports events.
+  
+- **Event Details:** Click on an event to view more details, including the description, date, location, and price.
+  
+- **Book Tickets:** Book your spot for an event by selecting the number of tickets you want to purchase.
+  
+- **Comments:** Leave a comment on an event to engage with other participants.
 
-A blue button should appear to click: _Make Public_,
+## Features
+- **User Registration:** Users can create a new account by providing a username, email, and password.
+- **User Login:** Users can log in to access their account and view their bookings.
+- **Event Booking:** Users can book tickets for events and manage their bookings.
+- **Comment System:** Users can leave comments on events, edit their comments, and delete them if necessary.
+- **Responsive Design:** The application is fully responsive and accessible on various devices.
 
-Another blue button should appear to click: _Open Browser_.
+## Technologies Used
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+- **Programming Languages:**
+  - Python
+  - HTML
+  - CSS
+  - JavaScript
+- **Framework:**
+  - Django
+- **Database:**
+  - SQLite (during development)
+  - PostgreSQL (for production)
+- **Deployment:**
+  - Heroku
+- **Version Control:**
+  - Git
+  - GitHub
 
-A blue button should appear to click: _Make Public_,
+## Development
 
-Another blue button should appear to click: _Open Browser_.
+The development of this application involved setting up Django models, views, and templates to manage user interactions with events. The comment system was implemented to allow users to engage with events and other participants.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Data Model
 
-To log into the Heroku toolbelt CLI:
+- **Events:** Each event includes a title, description, date, location, price, and image.
+- **Bookings:** Users can book tickets for events, with each booking linked to a specific event and user.
+- **Comments:** Users can leave comments on events, and each comment is linked to a specific event and user.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Testing
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+### Manual Testing
 
-### Connecting your Mongo database
+The following table summarizes the tests performed on various components of the Sportify platform:
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+| Feature                | Expected Behavior          | Result  |
+| ---------------------- |:--------------------------:| -------:|
+| Home Page Link         | Clicking the "Home" link redirects to the homepage displaying upcoming events.      | Pass |
+| About Page Link        | Clicking the "About" link redirects to the About Us page with information about the platform.    | Pass |
+| Contact Page Link      | Clicking the "Contact" link redirects to the Contact Us page with contact details.    | Pass |
+| Register Button        | Clicking the "Register" button opens the registration form for a new user account. | Pass |
+| Login Button           | Clicking the "Login" button opens the login form for existing users. | Pass |
+| Logout Button          | Clicking the "Logout" button logs out the current user and redirects to the homepage. | Pass |
+| Event Detail Page      | Clicking on an event redirects to the event's detail page displaying full details about the event. | Pass |
+| Book Now Button        | Clicking the "Book Now" button allows the user to book tickets for the event (requires login). | Pass |
+| My Bookings Link       | Clicking "My Bookings" shows a list of all events the user has booked. | Pass |
+| Edit Booking           | Clicking "Edit" on a booking allows the user to change the number of tickets. | Pass |
+| Cancel Booking         | Clicking "Cancel" on a booking deletes the booking after user confirmation. | Pass |
+| Leave a Comment        | Logged-in users can submit a comment on an event's detail page. | Pass |
+| Edit Comment           | Logged-in users can edit their own comments on an event's detail page. | Pass |
+| Delete Comment         | Logged-in users can delete their own comments from an event's detail page. | Pass |
+| Login Required Redirect | Attempting to book an event or leave a comment while not logged in redirects the user to the login page. | Pass |
+| Error Messages         | Proper error messages are shown for invalid actions, like trying to book without selecting tickets or submitting an empty comment. | Pass |
 
-------
+### Automated Testing
 
-## Release History
+In addition to manual testing, basic unit tests were written to ensure that core functionalities like user registration, event booking, and commenting work as expected.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Validation
 
-**June 18, 2024,** Add Mongo back into template
+- **HTML Validation:** Passed through W3C HTML Validator with no significant errors.
+- **CSS Validation:** Passed through W3C CSS Validator with no significant errors.
+- **JavaScript Validation:** Validated using JSHint, with adjustments made to ensure compatibility with ES6.
+- **Python Code Validation:** Passed PEP8 validation with no significant issues.
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+## Deployment
+This project was deployed using Heroku.
 
-**May 28 2024:** Fix Mongo and Links installs
+- **Steps for deployment:**
+  - Fork or clone this repository.
+  - Create a new Heroku app.
+  - Set the buildpacks to Python and NodeJS in the appropriate order.
+  - Link the Heroku app to the repository.
+  - Click on DEPLOY.
 
-**April 26 2024:** Update node version to 16
+## Credits 
+- **This project was developed entirely by me.**
+- Special thanks to the Django documentation for guidance on setting up the application.
+- Inspiration and ideas were gathered from various online tutorials and the Django documentation.
+- Code Institute for the deployment terminal.
 
-**September 20 2023:** Update Python version to 3.9.17.
+## Advice and Experience
+This project involved setting up a comprehensive Django application with user authentication, event management, and a comment system. One of the challenges was ensuring the application was fully responsive and worked well on various devices.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+## Acknowledgements
+A special thanks to my mentor for their advice and guidance throughout the development of this project.
