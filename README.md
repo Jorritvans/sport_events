@@ -32,7 +32,6 @@ In Sportify, users can browse through a list of available sports events, view de
 
 ## Features
 - **User Registration:** Users can create a new account by providing a username, email, and password.
-- 
 - **User Login:** Users can log in to access their account and view their bookings.
 - **Event Booking:** Users can book tickets for events and manage their bookings.
 - **Comment System:** Users can leave comments on events, edit their comments, and delete them if necessary.
