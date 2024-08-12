@@ -1,5 +1,3 @@
-<!-- base.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,16 +13,14 @@
         <div class="logo">
             <a href="{% url 'home' %}">Sportify</a>
         </div>
-        <div class="hamburger" onclick="toggleNav()">
-            &#9776;
-        </div>
+        <button class="hamburger" onclick="toggleNav()">&#9776;</button>
         <ul class="nav-links" id="navLinks">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'user_bookings' %}">My Bookings</a></li>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="#" onclick="confirmLogout(event)">Logout</a></li>
             {% else %}
                 <li><a href="{% url 'register' %}">Register</a></li>
                 <li><a href="{% url 'login' %}">Login</a></li>
@@ -50,6 +46,18 @@
                 navLinks.classList.remove("active");
             } else {
                 navLinks.classList.add("active");
+            }
+        }
+
+        function confirmLogout(event) {
+            event.preventDefault(); // Prevent the default action (navigating to the logout URL)
+            const confirmed = confirm("Are you sure you want to log out?");
+            if (confirmed) {
+                // If the user confirms, redirect them to the logout URL
+                window.location.href = "{% url 'logout' %}";
+            } else {
+                // If the user cancels, do nothing
+                return false;
             }
         }
     </script>
