@@ -13,19 +13,26 @@ The purpose of this project was to build an interactive web application using Dj
 In Sportify, users can browse through a list of available sports events, view details about each event, book tickets, and leave comments. To access these features, users need to register an account and log in.
 
 - **Register:** Create a new user account to start booking events and leave comments.
-  
+  ![register page](https://github.com/user-attachments/assets/658c21f9-9334-4d96-bc83-8bb01593b45e)
+
 - **Login:** Access your account to view and manage your bookings and interact with events.
-  
+  ![login](https://github.com/user-attachments/assets/9e2489f2-ab9a-4e55-bb82-f932fa03d8c3)
+
 - **Browse Events:** Explore the homepage to find upcoming sports events.
-  
+  ![explore](https://github.com/user-attachments/assets/5f29c029-738d-4ee8-8423-d3f94b3972f5)
+
 - **Event Details:** Click on an event to view more details, including the description, date, location, and price.
-  
+  ![event details](https://github.com/user-attachments/assets/cf3566e1-82c7-4af6-a3b6-e1c9ff43ed9f)
+
 - **Book Tickets:** Book your spot for an event by selecting the number of tickets you want to purchase.
-  
+  ![booking](https://github.com/user-attachments/assets/81392c6e-17fd-4c54-ad9b-bb55865a03e1)
+
 - **Comments:** Leave a comment on an event to engage with other participants.
+  ![comments](https://github.com/user-attachments/assets/27026e4e-9a7b-436d-9abc-be7957490185)
 
 ## Features
 - **User Registration:** Users can create a new account by providing a username, email, and password.
+- 
 - **User Login:** Users can log in to access their account and view their bookings.
 - **Event Booking:** Users can book tickets for events and manage their bookings.
 - **Comment System:** Users can leave comments on events, edit their comments, and delete them if necessary.
