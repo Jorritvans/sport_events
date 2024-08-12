@@ -91,9 +91,17 @@ In addition to manual testing, basic unit tests were written to ensure that core
 ### Validation
 
 - **HTML Validation:** Passed through W3C HTML Validator with no significant errors.
+- ![base html through the w3 validator](https://github.com/user-attachments/assets/908f5574-2fe4-4fd6-987f-91420a242c1b)
+
 - **CSS Validation:** Passed through W3C CSS Validator with no significant errors.
+- ![css passed through validator w3c JigSaw](https://github.com/user-attachments/assets/be2e0a56-b205-4e2e-97c7-e45897876fd3)
+
 - **JavaScript Validation:** Validated using JSHint, with adjustments made to ensure compatibility with ES6.
+- ![no errors on javascript found](https://github.com/user-attachments/assets/95439bc2-2300-47dd-a29f-45e4e001c8c6)
+
 - **Python Code Validation:** Passed PEP8 validation with no significant issues.
+- ![pep8 validator views py](https://github.com/user-attachments/assets/31f109dc-f728-496f-896d-1bcadab8e74a)
+
 
 ## Deployment
 This project was deployed using Heroku.
