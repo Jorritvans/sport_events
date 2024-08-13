@@ -647,9 +647,9 @@ form ul {
     }
 
     form input[type="email"] {
-        width: 250%; /* Make the input fields full width */
-        max-width: 165%; /* Ensure they don't exceed the screen width */
-        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        width: 250%;
+        max-width: 165%;
+        box-sizing: border-box;
         margin-left: -32%;
     }
 }
