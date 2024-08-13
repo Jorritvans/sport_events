@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 import dj_database_url
 from decouple import config
+import django_heroku
 
 if os.path.isfile('env.py'):
     import env
@@ -23,7 +24,7 @@ SECRET_KEY = os.getenv(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['sportevents-7caf908f6474.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -149,3 +150,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # URL to redirect users to login page if login is required
 LOGIN_URL = 'login_required'
+
+django_heroku.settings(locals())
