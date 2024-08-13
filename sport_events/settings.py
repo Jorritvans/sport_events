@@ -18,7 +18,7 @@ SECRET_KEY = os.getenv(
     'SECRET_KEY',
 )
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io',
@@ -67,17 +67,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'sport_events.wsgi.application'
 # Database configuration using dj_database_url for parsing DATABASE_URL
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
-
-# Override with production settings if in production environment
-if config('DJANGO_ENV', default='development') == 'production':
-    DATABASES = {
-        'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-    }
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [

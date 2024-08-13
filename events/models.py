@@ -10,13 +10,9 @@ class Event(models.Model):
     date = models.DateTimeField()  # Date and time of the event
     location = models.CharField(max_length=200)  # Location of the event
     price = models.DecimalField(
-        max_digits=10, decimal_places=2
-    )  # Price of the event
-    image = models.ImageField(
-        upload_to='event_images/',
-        default='path/to/default_image.jpg'
-    )  # Image for the event
-
+    max_digits=10, decimal_places=2)
+    image = models.ImageField(upload_to='events/')
+    
     def __str__(self):
         return self.title  # String representation of the event
 
