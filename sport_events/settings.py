@@ -21,7 +21,7 @@ SECRET_KEY = os.getenv(
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'sportevents.herokuapp.com',  # Heroku app
+    'sportevents-851bbc8681fc.herokuapp.com',
     'localhost',
     '127.0.0.1',
 ]
