@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 import dj_database_url
+from decouple import config
 
 # Load environment variables from .env file
 load_dotenv()
@@ -72,10 +73,17 @@ WSGI_APPLICATION = 'sport_events.wsgi.application'
 
 # Database configuration using dj_database_url for parsing DATABASE_URL
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': config('DATABASE_NAME', default='db.sqlite3'),
+    }
 }
+
+# For production
+if config('DJANGO_ENV', default='development') == 'production':
+    DATABASES = {
+        'default': dj_database_url.parse(config('DATABASE_URL'))
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
