@@ -307,23 +307,6 @@ body {
     margin-bottom: 60px;
 }
 
-/* See more button styling */
-.btn-see-more {
-    display: inline-block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #00c8ff;
-    color: #ffffff;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn-see-more:hover {
-    background-color: #0075ff;
-    color: #ffffff;
-}
-
 /* Upcoming events heading styling */
 .upcoming {
     width: 33.33%;
@@ -358,58 +341,6 @@ body {
     line-height: 1.6;
     color: #c0c0c0;
     margin-bottom: 30px;
-}
-
-/* Form styling in the contact section */
-.contact-section form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-section label {
-    font-size: 1.1em;
-    color: #c0c0c0;
-    margin-bottom: 10px;
-    align-self: flex-start;
-}
-
-/* Input and textarea styling in the contact section */
-.contact-section input,
-.contact-section textarea {
-    width: 100%;
-    max-width: 600px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    background-color: #272727;
-    color: #e0e0e0;
-}
-
-/* Input and textarea focus styling */
-.contact-section input:focus,
-.contact-section textarea:focus {
-    outline: none;
-    border-color: #00c8ff;
-}
-
-/* Button styling in the contact section */
-.contact-section .btn {
-    background-color: #00c8ff;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
-}
-
-.contact-section .btn:hover {
-    background-color: #0075ff;
 }
 
 /* Event detail page general styling */
