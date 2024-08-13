@@ -2,29 +2,27 @@ import os
 from dotenv import load_dotenv
 import dj_database_url
 from decouple import config
-import django_heroku
-
 if os.path.isfile('env.py'):
     import env
-
 # Load environment variables from .env file
 load_dotenv()
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv(
     'SECRET_KEY',
 )
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sportevents-7caf908f6474.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    '8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io',
+    'sportevents-7caf908f6474.herokuapp.com',
+    '127.0.0.1',
+    'localhost',
+]
 
 # Application definition
 
@@ -37,7 +35,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'events',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -48,9 +45,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 ROOT_URLCONF = 'sport_events.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -66,9 +61,7 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'sport_events.wsgi.application'
-
 # Database configuration using dj_database_url for parsing DATABASE_URL
 DATABASES = {
     'default': {
@@ -76,16 +69,13 @@ DATABASES = {
         'NAME': config('DATABASE_NAME', default='db.sqlite3'),
     }
 }
-
 # For production
 if config('DJANGO_ENV', default='development') == 'production':
     DATABASES = {
         'default': dj_database_url.parse(config('DATABASE_URL'))
     }
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': (
@@ -112,43 +102,28 @@ AUTH_PASSWORD_VALIDATORS = [
         ),
     },
 ]
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 # Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 # CSRF Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
     'https://sportevents-7caf908f6474.herokuapp.com',
     'https://8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io',
 ]
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 # URL to redirect users to login page if login is required
 LOGIN_URL = 'login_required'
-
-django_heroku.settings(locals())
