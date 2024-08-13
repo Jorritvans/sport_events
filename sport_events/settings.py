@@ -71,10 +71,11 @@ DATABASES = {
         'NAME': config('DATABASE_NAME', default='db.sqlite3'),
     }
 }
-# For production
+
+# Override with production settings if in production environment
 if config('DJANGO_ENV', default='development') == 'production':
     DATABASES = {
-        'default': dj_database_url.parse(config('DATABASE_URL'))
+        'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     }
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
