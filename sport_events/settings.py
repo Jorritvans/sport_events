@@ -21,9 +21,9 @@ SECRET_KEY = os.getenv(
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io',  # Keep this if you are still using Gitpod
-    'https://sportifyjorrit-e1f975140ab8.herokuapp.com/',  # Replace with your actual Heroku app name
-    'localhost'
+    'sportevents.herokuapp.com',  # Heroku app
+    'localhost',
+    '127.0.0.1',
 ]
 
 # Application definition
