@@ -18,7 +18,7 @@ SECRET_KEY = os.getenv(
     'SECRET_KEY',
 )
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io',
