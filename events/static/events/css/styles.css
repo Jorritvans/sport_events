@@ -602,6 +602,23 @@ form ul {
     text-decoration: underline;
 }
 
+input[type="email1"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-sizing: border-box;
+}
+
+input[type="number1"] {
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
 /* Media Queries for Mobile Devices */
 @media (max-width: 600px) {
     .hero h1 {

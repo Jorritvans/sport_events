@@ -18,12 +18,11 @@ SECRET_KEY = os.getenv(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'sportevents-851bbc8681fc.herokuapp.com',
-    'localhost',
-    '127.0.0.1',
+    '8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io',
+    'localhost'
 ]
 
 # Application definition
