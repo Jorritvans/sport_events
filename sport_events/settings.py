@@ -2,7 +2,9 @@ import os
 from dotenv import load_dotenv
 import dj_database_url
 from decouple import config
-import env
+
+if os.path.isfile('env.py'):
+    import env
 
 # Load environment variables from .env file
 load_dotenv()
