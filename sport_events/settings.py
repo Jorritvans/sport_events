@@ -22,7 +22,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io',
-    'https://sportevents-7caf908f6474.herokuapp.com',
+    'sportevents-7caf908f6474.herokuapp.com',
     '127.0.0.1',
     'localhost',
 ]
