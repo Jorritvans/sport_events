@@ -22,8 +22,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io',
-    '.herokuapp.com'
-    'localhost'
+    'https://sportevents-7caf908f6474.herokuapp.com',
+    '127.0.0.1',
+    'localhost',
 ]
 
 # Application definition
@@ -71,9 +72,7 @@ WSGI_APPLICATION = 'sport_events.wsgi.application'
 
 # Database configuration using dj_database_url for parsing DATABASE_URL
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
-    )
+    'default': dj_database_url.parse(os.getenv("DATABASE_URL"))
 }
 
 # Password validation
@@ -132,7 +131,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # CSRF Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io'
+    'https://sportevents-7caf908f6474.herokuapp.com',
+    'https://8000-jorritvans-sportevents-mxbvc73wfzr.ws-eu115.gitpod.io',
 ]
 
 # Default primary key field type
