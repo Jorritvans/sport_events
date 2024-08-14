@@ -6,7 +6,7 @@ The purpose of this project was to build an interactive web application using Dj
 
 ## Link to app
 
-[Link to Sportify](https://your-deployment-link.com)
+https://sportevents-7caf908f6474.herokuapp.com/ or press [link]9https://sportevents-7caf908f6474.herokuapp.com/)
 
 ## How to Use
 
@@ -46,11 +46,13 @@ In Sportify, users can browse through a list of available sports events, view de
   - JavaScript
 - **Framework:**
   - Django
+  - Bootstrap
 - **Database:**
   - SQLite (during development)
   - PostgreSQL (for production)
 - **Deployment:**
   - Heroku
+  - Cloudinary
 - **Version Control:**
   - Git
   - GitHub
@@ -66,6 +68,12 @@ The development of this application involved setting up Django models, views, an
 - **Comments:** Users can leave comments on events, and each comment is linked to a specific event and user.
 
 ## Testing
+
+## Bugs
+- __No known bugs.__
+
+- __PEP8__
+- No errors returned from the PEP8 checker
 
 ### Manual Testing
 
@@ -127,6 +135,6 @@ This project was deployed using Heroku.
 
 ## Advice and Experience
 This project involved setting up a comprehensive Django application with user authentication, event management, and a comment system. One of the challenges was ensuring the application was fully responsive and worked well on various devices.
-
+I have to mention i had a lot of difficulties in buidling this project because of being stressed time wise as i had some time off from school and it really took me a while to get back into it, i had a few commits that had useless information in it due to frustrations which is not good but in general i am happy how the project turned out giving the small amount of time i had.
 ## Acknowledgements
 A special thanks to my mentor for their advice and guidance throughout the development of this project.
