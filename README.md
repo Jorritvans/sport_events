@@ -1,6 +1,10 @@
 # Sportify
 Sportify is a dynamic platform where users can discover, participate in, and engage with various sports events. This web application allows users to register, book events, and interact with other sports enthusiasts through comments.
 
+
+![am i responsive](https://github.com/user-attachments/assets/2729e296-311c-4813-aeb9-5c510224f4fb)
+
+
 ### Portfolio Project - Django Web Application
 The purpose of this project was to build an interactive web application using Django that allows users to explore and engage with sports events in their area.
 
