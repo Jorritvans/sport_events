@@ -1,20 +1,19 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
-# Model representing an Event
 class Event(models.Model):
-    title = models.CharField(max_length=200)  # Event title
-    description = models.TextField()  # Detailed description of the event
-    date = models.DateTimeField()  # Date and time of the event
-    location = models.CharField(max_length=200)  # Location of the event
-    price = models.DecimalField(
-    max_digits=10, decimal_places=2)
-    image = models.ImageField(upload_to='events/')
-    
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    date = models.DateTimeField()
+    location = models.CharField(max_length=200)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    image = CloudinaryField('image')
+
     def __str__(self):
-        return self.title  # String representation of the event
+        return self.title
 
 
 # Model representing a Booking for an event
