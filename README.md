@@ -70,11 +70,11 @@ The development of this application involved setting up Django models, views, an
 - **Events:** Each event includes a title, description, date, location, price, and image.
 - **Bookings:** Users can book tickets for events, with each booking linked to a specific event and user.
 - **Comments:** Users can leave comments on events, and each comment is linked to a specific event and user.
-
-## Testing
-
+- 
 ## Bugs
 - __No known bugs.__
+- 
+## Testing
 
 - __PEP8__
 - No errors returned from the PEP8 checker
